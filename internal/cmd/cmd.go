@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"code.topwidgets.cn/maoerduo-server/ce-core/middleware"
 	"context"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -18,7 +19,12 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
 			s.Group("/", func(group *ghttp.RouterGroup) {
-				group.Middleware(ghttp.MiddlewareHandlerResponse)
+				group.Middleware(
+					middleware.RequestReplayValidateMiddleware,
+					middleware.RequestWrapMiddleware,
+					middleware.RequestSignValidateMiddleware,
+					middleware.ResponseWrapperMiddleware,
+				)
 				group.Bind(
 					controller.Hello,
 				)

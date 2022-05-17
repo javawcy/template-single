@@ -3,6 +3,6 @@ module github.com/gogf/template-single
 go 1.15
 
 require (
-	github.com/forgoer/openssl v1.2.1
-	github.com/gogf/gf/v2 v2.0.4
+	code.topwidgets.cn/maoerduo-server/ce-core v0.0.2
+	github.com/gogf/gf/v2 v2.0.6
 )

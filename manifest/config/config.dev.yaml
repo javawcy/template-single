@@ -1,11 +1,16 @@
 server:
-  address:     ":8000"
+  address:     ":9000"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
 
 logger:
   level : "all"
   stdout: true
+
+redis:
+  default:
+    address: 127.0.0.1:6379
+    db: 0
 
 
 
